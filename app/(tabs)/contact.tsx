@@ -5,7 +5,7 @@ export default function TabTwoScreen() {
   return (
 
     <View style={styles.container}>
-      <Text style={styles.text}>Contato</Text>
+      <Text style={styles.text}>Hello World, Contato</Text>
     </View>
 
   )}
