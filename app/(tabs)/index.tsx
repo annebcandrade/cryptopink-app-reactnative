@@ -3,7 +3,10 @@ import { Image, StyleSheet, Platform } from 'react-native';
 import { HelloWave } from '@/components/HelloWave';
 import { View, Text } from 'react-native';
 import { useEffect, useState } from 'react';
-import { CartesianChart, Line, useChartPressState,   } from "victory-native";
+import { CartesianChart, Line, useChartPressState  } from "victory-native";
+import CandleStickPage from '../../components/candlesticPage';
+
+
 
 const candlestickWebSocketURL = 'wss://stream.binance.com:9443/ws/btcusdt@kline_1m';
 
@@ -18,13 +21,19 @@ const DATA = [
 ]
 
 
+
 export default function HomeScreen() {
 
   const { state, isActive } = useChartPressState({x: 0, y: { price: 0} })
 
   const [lineChartData, setLineChartData] = useState<{ x: number; y: number; }[]>([]);
-  const [candlestickChartData, setCandlestickChartData] = useState<{ x: number; y: number; }[]>([]);
-
+  const [candlestickChartData, setCandlestickChartData] = useState<{
+    date: Date;
+    high: number;
+    low: number;
+    open: number;
+    close: number;
+  }[]>([]);
   
   
   
@@ -45,11 +54,19 @@ export default function HomeScreen() {
         y: parseFloat(candlestickData.k.c)
       };
 
+      const newCandleDataPoint = {
+        date: dateWithoutTime,
+        high: parseFloat(candlestickData.k.h),
+        low: parseFloat(candlestickData.k.l),
+        open: parseFloat(candlestickData.k.o),
+        close: parseFloat(candlestickData.k.c)
+      };
+
     
       console.log(newDataPoint)
 
       // Atualizar os dados do gráfico de velas com os dados recebidos
-      setCandlestickChartData((prevData) => [...prevData, newDataPoint]);
+      setCandlestickChartData((prevData) => [...prevData, newCandleDataPoint]);
       // Atualizar os dados do gráfico de linha com os dados recebidos
       setLineChartData((prevData) => [...prevData, newDataPoint]);
     };
@@ -63,17 +80,21 @@ export default function HomeScreen() {
 
   // console.log(candlestickChartData)
 
+  
+
 
 
   return (
 
 <View style={{marginTop: 100}}>
-<Text>Gráfico em Linha</Text>
+  <Text style={{ fontWeight: 'bold', marginLeft: 20, fontSize: 19, color: '#e44b8d'}}>Bem-Vindo(a) a CryptoPink!</Text>
+  <Text style={{ fontSize: 15, marginLeft: 20}}>Dados da Binance atualizados em Tempo Real</Text>
+<Text style={{ marginLeft: 20, fontWeight: 'bold', fontSize: 18, marginTop: 10}}>Gráfico em Linha</Text>
 <View > 
 
 <View style={{ width: '100%', height: 150}}>
 {/* <Text style={{ position: 'absolute', top: 10, left: 10 }}>{textValue}</Text> */}
-<CartesianChart data={candlestickChartData} xKey="x" yKeys={["y"]}
+<CartesianChart data={lineChartData} xKey="x" yKeys={["y"]}
 chartPressState={[]} >
 
         {({ points }) => (
@@ -84,8 +105,9 @@ chartPressState={[]} >
 
 
 
-<Text>Gráfico em Vela</Text>
+<Text style={{ marginLeft: 20, fontWeight: 'bold', fontSize:18}}>Gráfico em Vela</Text>
 
+<CandleStickPage candleData={candlestickChartData} />
 
 
 </View>
