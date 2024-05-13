@@ -1,50 +1,45 @@
-# Welcome to your Expo app 👋
+# 📲 CryptoPink - app em React Native 
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
-## Get started
 
-1. Install dependencies
+## 🎦 Link do vídeo do YouTube (execução do app e explicação do código): 
 
-   ```bash
-   npm install
-   ```
+https://www.youtube.com/watch?v=9PrDR3VKbXM
 
-2. Start the app
 
-   ```bash
-    npx expo start
-   ```
 
-In the output, you'll find options to open the app in a
+## 📄 Como instalar?
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-## Get a fresh project
+NPM INSTALL 
 
-When you're ready, run:
 
-```bash
-npm run reset-project
-```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+NPX EXPO START 
 
-## Learn more
 
-To learn more about developing your project with Expo, look at the following resources:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## 🌐Tecnologias Utilizadas: 
 
-## Join the community
 
-Join our community of developers creating universal apps.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Expo, React native, Typescript, websocket, HOOKS: useState e useeffect, animated, tabscreen, Victory-native. 
+
+
+
+## ⏳ Como foi feito o projeto? 
+
+
+
+Primeiro montei o projeto com logo e cores escolhidas, depois baixei o Victory native e montei os gráficos seguindo a documentação, após isso, conectei ao WebSocket, salvei os dados nos estados (precisei transformar o date do x em milissegundos) e após isso passei esses dados para os gráficos, finalizando, coloquei simples animações ao abrir o app. 
+
+
+
+## 📌 Considerações Finais: 
+
+
+
+Amei desenvolver esse projeto em react native, fiquei muito feliz com o resultado, espero que gostem e qualquer dúvida podem entrar em contato. 
+
+
