@@ -24,8 +24,7 @@ NPX EXPO START
 
 
 
-Expo, React native, Typescript, websocket, HOOKS: useState e useeffect, animated, tabscreen, Victory-native. 
-
+Expo, React native, Typescript, websocket, HOOKS: useState e useeffect, animated, tabscreen, Victory-native, api de websocket da binance. 
 
 
 ## ⏳ Como foi feito o projeto? 
