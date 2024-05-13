@@ -1,7 +1,7 @@
 import { Image, StyleSheet, Platform } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
-import { View, Text } from 'react-native';
+import { View, Text, Animated } from 'react-native';
 import { useEffect, useState } from 'react';
 import { CartesianChart, Line, useChartPressState  } from "victory-native";
 import CandleStickPage from '../../components/candlesticPage';
@@ -25,6 +25,16 @@ const DATA = [
 export default function HomeScreen() {
 
   const { state, isActive } = useChartPressState({x: 0, y: { price: 0} })
+  const [largura, setLargura] = useState(new Animated.Value(0));
+  const [altura, setAltura] = useState(30);
+
+  Animated.timing(
+    largura, 
+    {
+      toValue:360,
+      duration: 2000,
+      useNativeDriver: false, 
+    }).start();
 
   const [lineChartData, setLineChartData] = useState<{ x: number; y: number; }[]>([]);
   const [candlestickChartData, setCandlestickChartData] = useState<{
@@ -87,6 +97,10 @@ export default function HomeScreen() {
   return (
 
 <View style={{marginTop: 100}}>
+  <Animated.View style={{
+        width: largura,
+        height: altura
+      }}>
   <Text style={{ fontWeight: 'bold', marginLeft: 20, fontSize: 19, color: '#e44b8d'}}>Bem-Vindo(a) a CryptoPink!</Text>
   <Text style={{ fontSize: 15, marginLeft: 20}}>Dados da Binance atualizados em Tempo Real</Text>
 <Text style={{ marginLeft: 20, fontWeight: 'bold', fontSize: 18, marginTop: 10}}>Gráfico em Linha</Text>
@@ -111,6 +125,7 @@ chartPressState={[]} >
 
 
 </View>
+</Animated.View>
 
 
 </View>

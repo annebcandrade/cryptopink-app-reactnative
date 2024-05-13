@@ -1,11 +1,32 @@
 
-import { View, Text, StyleSheet} from 'react-native'
+import { useState } from 'react';
+import { View, Text, StyleSheet, Animated} from 'react-native'
 
 export default function TabTwoScreen() {
+
+  const [largura, setLargura] = useState(new Animated.Value(0));
+  const [altura, setAltura] = useState(30);
+
+  Animated.timing(
+    largura, 
+    {
+      toValue:360,
+      duration: 2000,
+      useNativeDriver: false, 
+    }).start();
+
+
   return (
 
     <View style={styles.container}>
-      <Text style={styles.text}>Hello World, Essa é a Contato</Text>
+
+      <Animated.View style={{
+        width: largura,
+        height: altura,
+      }}
+      >
+      <Text style={styles.text}>Hello World, Essa é a Página Contato</Text>
+      </Animated.View>
     </View>
 
   )}
