@@ -1,4 +1,12 @@
+
 # 📲 CryptoPink - app em React Native 
+
+<img width="245" alt="Captura de Tela 2024-05-12 às 22 10 40" src="https://github.com/annebcandrade/cryptopink-app-reactnative/assets/96836999/7b7687ad-42e2-424f-9971-1f37d55da92b">
+<img width="240" alt="Captura de Tela 2024-05-12 às 00 32 38" src="https://github.com/annebcandrade/cryptopink-app-reactnative/assets/96836999/41661201-cdef-495e-8368-b0ed0afe30f3">
+<img width="245" alt="Captura de Tela 2024-05-12 às 00 31 01" src="https://github.com/annebcandrade/cryptopink-app-reactnative/assets/96836999/2a4b0927-5a2f-42f3-b5d5-84239892725f">
+<img width="245" alt="Captura de Tela 2024-05-12 às 00 31 12" src="https://github.com/annebcandrade/cryptopink-app-reactnative/assets/96836999/a7b2ae65-615c-4901-acff-3abfd93bdf14">
+
+
 
 
 
